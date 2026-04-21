@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, Vignesh!</title>
+
+  <!-- This script pulls in Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- These are for the animations and photo gallery -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css" />
+
+  <!-- Google Fonts for the Anime look -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Link to your new external CSS file -->
+  <link rel="stylesheet" href="style.css">
+  <!-- IMPORTANT: Replace with a real image link after you upload it -->
+  <meta property="og:image" content="https://placehold.co/1200x630/87CEEB/FFFFFF?text=A+Surprise+For+[Name]">
+</head>
+<body>
+<audio id="bg-music" loop>
+  <source src="https://res.cloudinary.com/dfll4kd0d/video/upload/v1776493206/music_yagri3.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Canvas for the falling cherry blossoms -->
+<canvas id="sakura-canvas"></canvas>
+
+<!-- Section 1: Hero Welcome -->
+<header class="h-screen relative flex items-center justify-center text-white overflow-hidden">
+  <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-[-1]">
+    <source src="https://res.cloudinary.com/dfll4kd0d/video/upload/v1776490067/video_f7qzzw.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+
+  <div class="text-center z-10 p-4" data-aos="fade-in" data-aos-duration="1500">
+    <h1 class="text-5xl md:text-7xl font-anime drop-shadow-lg">Happy Birthday, Vignesh!</h1>
+    <p class="mt-4 text-xl font-semibold">Celebrating a wonderful journey of dreams, distance, and memories connecting Trichy to Qatar</p>
+    <div id="countdown" class="mt-6 text-2xl font-semibold tracking-widest leading-relaxed"></div>
+    <button onclick="toggleMusic()" 
+class="mt-6 px-6 py-2 bg-pink-500 hover:bg-pink-600 transition text-white rounded-full shadow-lg">
+  🎵 Play Music
+</button>
+
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="container mx-auto p-6 md:p-12">
+
+  <!-- Section 2: A Letter For You -->
+  <section class="my-16 md:my-24 max-w-3xl mx-auto text-center" data-aos="fade-up">
+    <h2 class="text-4xl md:text-5xl font-anime text-sakura mb-8 drop-shadow-sm">A Special Message For You</h2>
+    <div class="text-justify text-lg leading-relaxed space-y-4 bg-white p-8 rounded-lg shadow-lg">
+      <!-- TODO: Write your personal letter here -->
+      <p>Hey Fav,</p>
+      <p>Wish you a very Happy Birthday! May god fulfill all your wishes, you have an endless supply of happy days and your dreams turns into reality. A journey through new cities, chasing your dreams. </p>
+      <p>You have always been so kind and the reason behind so many smiles.You have a beautiful heart, and it reflects in everything you do.You are also truly blessed to have such a wonderful mother and a loving family who have shaped you into the amazing person you are today.The values, warmth, and love you carry clearly come from them, and it’s something to be proud of.</p>
+      <p>May this year bring you even more success, happiness, peace, and unforgettable memories. Keep shining, keep smiling, and always be the incredible person you are.</p>
+      <p class="text-right mt-8">
+        Regards,
+        <br> Sowmiya Soundarya<br>
+        <br>
+      </p>
+    </div>
+  </section>
+
+  <!-- Section 3: Chapters of Your Life -->
+<section class="my-16 md:my-24">
+  <h2 class="text-4xl md:text-5xl font-anime text-center mb-6" data-aos="fade-up">
+    Chapters of Your Life
+  </h2>
+
+  <p class="text-center text-lg mb-6 leading-relaxed" data-aos="fade-up">
+  Every journey starts with a small step, and this was one of those beautiful beginnings — a moment captured on 5 January 2025
+</p>
+
+<div class="max-w-md mx-auto text-left text-lg mb-10 leading-relaxed" data-aos="fade-up">
+
+  <p class="font-semibold text-xl mb-2">
+    📸 First Instagram Post (5 Jan 2025)
+  </p>
+
+  <p class="italic mb-2">
+    “Smiles, vibes, and a little adventure 🤍”
+  </p>
+
+  <p class="mb-2">
+    ❤️ 124 Likes &nbsp;&nbsp; 💬 10 Comments
+  </p>
+
+  <p class="text-gray-600">
+    Just a simple day that turned into a beautiful memory.
+  </p>
+
+</div>
+  <!-- Image Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+    <!-- Photo 1 -->
+    <div class="flex justify-center" data-aos="zoom-in">
+      <img src="img/v1.jpg"
+           alt="Photo 1"
+           class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+    </div>
+
+    <!-- Photo 2 -->
+    <div class="flex justify-center" data-aos="zoom-in" data-aos-delay="100">
+      <img src="img/v2.jpg"
+           alt="Photo 2"
+           class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+    </div>
+
+    <!-- Photo 3 -->
+    <div class="flex justify-center" data-aos="zoom-in" data-aos-delay="200">
+      <img src="img/v3.jpg"
+           alt="Photo 3"
+           class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+    </div>
+
+    <!-- Photo 4 -->
+    <div class="flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+      <img src="img/v4.jpg"
+           alt="Photo 4"
+           class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+    </div>
+
+  </div>
+</section>
+
+  <!-- Section 4: Your Favourite Photos -->
+<section class="my-16 md:my-24">
+  <h2 class="text-4xl md:text-5xl font-anime text-center mb-6" data-aos="fade-up">
+    Travel Diaries
+  </h2>
+
+  <!-- Story Content -->
+  <p class="text-center text-lg mb-6 leading-relaxed" data-aos="fade-up">
+    A beautiful escape to the waves and peaceful moments — a memory from 16 March 2025
+  </p>
+
+  <div class="max-w-md mx-auto text-left text-lg mb-10 leading-relaxed" data-aos="fade-up">
+
+    <p class="font-semibold text-xl mb-2">
+      📸 Second Instagram Post (16 March 2025)
+    </p>
+
+    <p class="italic mb-2">
+      “Beach vibes and calm waves🖤”
+    </p>
+
+    <p class="mb-2">
+      ❤️ 122 Likes &nbsp;&nbsp; 💬 6 Comments
+    </p>
+
+    <p class="text-gray-600 mb-2">
+      Visited beach & Garkuda Park — a day filled with peace and joy.
+    </p>
+
+    <p class="text-gray-500 text-sm">
+      🎵 Song: Avalum Nanum
+    </p>
+
+  </div>
+
+  <!-- Image Grid -->
+<div id="lightgallery2" class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+  <!-- Photo 1 -->
+  <a href="img/p1.jpeg" class="flex justify-center" data-aos="zoom-in">
+    <img src="img/p1.jpeg"
+         class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+  </a>
+
+  <!-- Photo 2 -->
+  <a href="img/p2.jpg" class="flex justify-center" data-aos="zoom-in" data-aos-delay="100">
+    <img src="img/p2.jpg"
+         class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+  </a>
+
+  <!-- Photo 3 -->
+  <a href="img/p3.jpg" class="flex justify-center" data-aos="zoom-in" data-aos-delay="200">
+    <img src="img/p3.jpg"
+         class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+  </a>
+
+  <!-- Photo 4 -->
+  <a href="img/p4.jpg" class="flex justify-center" data-aos="zoom-in" data-aos-delay="300">
+    <img src="img/p4.jpg"
+         class="max-w-full h-auto rounded-lg shadow-xl border-4 border-white">
+  </a>
+
+</div>
+</section>
+
+ <!-- Section 5: The Gallery -->
+<section class="my-16 md:my-24">
+  <h2 class="text-4xl md:text-5xl font-anime text-center mb-12" data-aos="fade-up">
+    Precious Family Frames
+  </h2>
+  <p class="text-center text-lg -mt-8 mb-12">Celebrating love, laughter of your brother’s wedding moments 💍🤍</p>
+
+  <div id="lightgallery" class="grid grid-cols-2 md:grid-cols-4 gap-4">
+
+    <!-- Image Item -->
+    <a href="img/f1.JPG" class="gallery-item">
+      <img src="img/f1.JPG" alt="Memory 1" class="gallery-img">
+    </a>
+
+    <a href="img/f2.JPG" class="gallery-item">
+      <img src="img/f2.JPG" alt="Memory 2" class="gallery-img">
+    </a>
+
+    <a href="img/f3.JPG" class="gallery-item">
+      <img src="img/f3.JPG" alt="Memory 3" class="gallery-img">
+    </a>
+
+    <a href="img/f4.JPG" class="gallery-item">
+      <img src="img/f4.JPG" alt="Memory 4" class="gallery-img">
+    </a>
+
+    <a href="img/f5.JPG" class="gallery-item">
+      <img src="img/f5.JPG" alt="Memory 5" class="gallery-img">
+    </a>
+
+    <a href="img/f6.JPG" class="gallery-item">
+      <img src="img/f6.JPG" alt="Memory 6" class="gallery-img">
+    </a>
+
+    <a href="img/f7.JPG" class="gallery-item">
+      <img src="img/f7.JPG" alt="Memory 7" class="gallery-img">
+    </a>
+
+    <a href="img/f8.JPG" class="gallery-item">
+      <img src="img/f8.JPG" alt="Memory 8" class="gallery-img">
+    </a>
+
+    <a href="img/f9.JPG" class="gallery-item">
+      <img src="img/f9.JPG" alt="Memory 9" class="gallery-img">
+    </a>
+
+    <a href="img/f10.JPG" class="gallery-item">
+      <img src="img/f10.JPG" alt="Memory 10" class="gallery-img">
+    </a>
+
+    <a href="img/f11.JPG" class="gallery-item">
+      <img src="img/f11.JPG" alt="Memory 11" class="gallery-img">
+    </a>
+
+    <a href="img/f12.JPG" class="gallery-item">
+      <img src="img/f12.JPG" alt="Memory 12" class="gallery-img">
+    </a>
+
+  </div>
+</section>
+
+    <!-- Section 6: Finale -->
+<section class="my-16 md:my-24 text-center" data-aos="fade-up">
+  
+  <h2 class="text-4xl md:text-5xl font-anime mb-6">
+    Once again, Happy Birthday Vignesh!!
+  </h2>
+
+  <p class="text-lg text-gray-600 mb-10">
+    A digital gift to you on your special day 💖
+  </p>
+
+  <!-- Footer Card -->
+  <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-2xl hover:shadow-pink-200 transition duration-500">
+    
+    <p class="text-lg font-semibold text-gray-700 mb-4 tracking-wide">
+      Made with Memories 🤍
+    </p>
+
+    <!-- Divider -->
+    <div class="w-16 h-1 bg-pink-300 mx-auto mb-6 rounded-full"></div>
+
+    <!-- Contact Info -->
+    <div class="text-sm text-gray-500 space-y-2">
+      
+      <p>© 2026 Sowmiya S</p>
+
+      <p class="flex items-center justify-center gap-2">
+        <!-- Instagram Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M7.75 2C4.678 2 2 4.678 2 7.75v8.5C2 19.322 4.678 22 7.75 22h8.5C19.322 22 22 19.322 22 16.25v-8.5C22 4.678 19.322 2 16.25 2h-8.5zm0 2h8.5C18.216 4 20 5.784 20 7.75v8.5c0 1.966-1.784 3.75-3.75 3.75h-8.5C5.784 20 4 18.216 4 16.25v-8.5C4 5.784 5.784 4 7.75 4zm8.75 1.5a1.25 1.25 0 110 2.5 1.25 1.25 0 010-2.5zM12 7a5 5 0 100 10 5 5 0 000-10zm0 2a3 3 0 110 6 3 3 0 010-6z"/>
+        </svg>
+        @sowmiya_moorthy_27
+      </p>
+
+      <p class="flex items-center justify-center gap-2">
+        <!-- Mail Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-blue-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M2 4h20v16H2V4zm10 7L4 6h16l-8 5zm0 2l8-5v10H4V8l8 5z"/>
+        </svg>
+        sowmyarockfort@gmail.com
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Optional Ending Text -->
+  <p class="mt-10 text-gray-400 text-sm animate-pulse">
+    ✨ Thank you for being part of this beautiful journey ✨
+  </p>
+
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer class="bg-navy text-white p-10 text-center relative overflow-hidden">
+
+  <!-- Quote -->
+  <p class="text-lg md:text-xl italic mb-8 relative z-10">
+    “No distance can ever weaken a bond that’s built on memories, trust, and love.” 🤍
+  </p>
+
+  <!-- Map Container -->
+  <div class="relative w-full max-w-4xl mx-auto h-48">
+
+    <!-- Map -->
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/World_map_-_low_resolution.svg"
+         class="absolute inset-0 w-full h-full object-cover opacity-20">
+
+    <!-- SVG -->
+    <svg viewBox="0 0 750 200" class="absolute inset-0 w-full h-full">
+
+      <path id="flightPath"
+      d="M496,75 
+         Q565,50 575,105"
+      fill="none"
+      stroke="white"
+      stroke-width="2"
+      stroke-dasharray="6 4"
+      opacity="0.7"/>
+
+      <!-- ✈️ Airplane moving -->
+      <g>
+  <text font-size="20">✈️</text>
+  <animateMotion dur="6s" repeatCount="indefinite" rotate="auto">
+    <mpath href="#flightPath" />
+  </animateMotion>
+</g>
+
+    </svg>
+
+    <!-- 📍 Qatar -->
+<div class="absolute left-[62%] bottom-[60%] text-xs bg-white text-black px-2 py-1 rounded-full shadow animate-pulse">
+  📍 Qatar
+</div>
+
+<!-- 📍 Trichy -->
+<div class="absolute left-[70%] bottom-[48%] text-xs bg-white text-black px-2 py-1 rounded-full shadow animate-pulse">
+  📍 Trichy
+</div>
+
+  <!-- Ending -->
+  <p class="mt-8 text-sm opacity-70">
+    Distance means so little when someone means so much 💖
+  </p>
+
+  <br><br><br><br><br><br><p class="mt-8 text-sm opacity-70">
+    Hope you like it...
+  </p>
+
+</footer>
+
+<!-- These scripts are for the animations and photo gallery -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
+<!-- Link to your new external JavaScript file -->
+<script src="script.js"></script>
+</body>
+</html>
